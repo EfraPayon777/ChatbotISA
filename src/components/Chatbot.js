@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
+const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://chatbot-isa-kqhm.vercel.app';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([
@@ -38,9 +38,16 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(`${backendUrl}/api/chat`, { message: userMsg });
+      const url = `${backendUrl}/api/chat`;
+      console.log('Enviando petición a:', url);
+      console.log('Mensaje:', userMsg);
+      
+      const res = await axios.post(url, { message: userMsg });
+      console.log('Respuesta exitosa:', res.data);
       setMessages(prev => [...prev, { from: 'bot', text: res.data.reply }]);
     } catch (err) {
+      console.error('Error en la petición:', err);
+      console.error('URL intentada:', `${backendUrl}/api/chat`);
       setMessages(prev => [...prev, { from: 'bot', text: 'Ocurrió un error al conectar con la IA.' }]);
     }
     setLoading(false);
@@ -51,9 +58,16 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(`${backendUrl}/api/chat`, { message: question });
+      const url = `${backendUrl}/api/chat`;
+      console.log('Enviando pregunta preestablecida a:', url);
+      console.log('Pregunta:', question);
+      
+      const res = await axios.post(url, { message: question });
+      console.log('Respuesta exitosa:', res.data);
       setMessages(prev => [...prev, { from: 'bot', text: res.data.reply }]);
     } catch (err) {
+      console.error('Error en pregunta preestablecida:', err);
+      console.error('URL intentada:', `${backendUrl}/api/chat`);
       setMessages(prev => [...prev, { from: 'bot', text: 'Ocurrió un error al conectar con la IA.' }]);
     }
     setLoading(false);
