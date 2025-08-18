@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -26,6 +26,7 @@ module.exports = async (req, res) => {
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
     
     if (!GEMINI_API_KEY) {
+      console.error('API key no configurada');
       return res.status(500).json({ error: 'API key de Gemini no configurada' });
     }
 
@@ -89,4 +90,4 @@ Asistente:`
     console.error('Error en API:', error.response?.data || error.message);
     res.status(500).json({ error: 'Error al comunicarse con Gemini' });
   }
-}; 
+} 
