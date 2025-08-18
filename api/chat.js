@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 export default async function handler(req, res) {
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -30,14 +28,19 @@ export default async function handler(req, res) {
     
     console.log('Enviando mensaje a Gemini:', message);
 
-    const response = await axios.post(
+    const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
       {
-        contents: [
-          {
-            parts: [
-              {
-                text: `Eres un asistente virtual especializado de ISA Automation El Salvador (International Society of Automation, sección El Salvador).
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  text: `Eres un asistente virtual especializado de ISA Automation El Salvador (International Society of Automation, sección El Salvador).
 
 INFORMACIÓN SOBRE LA EMPRESA:
 - ISA Automation El Salvador es la sección local de la International Society of Automation
@@ -85,26 +88,31 @@ INSTRUCCIONES:
 
 Usuario: ${message}
 Asistente:`
-              }
-            ]
+                }
+              ]
+            }
+          ],
+          generationConfig: {
+            temperature: 0.7,        // Controla la creatividad (0-1)
+            maxOutputTokens: 500,    // Longitud máxima de respuesta
+            topP: 0.8,              // Controla la diversidad de respuestas
+            topK: 40                 // Controla la selección de tokens
           }
-        ],
-        generationConfig: {
-          temperature: 0.7,        // Controla la creatividad (0-1)
-          maxOutputTokens: 500,    // Longitud máxima de respuesta
-          topP: 0.8,              // Controla la diversidad de respuestas
-          topK: 40                 // Controla la selección de tokens
-        }
+        })
       }
     );
 
-    const botReply = response.data.candidates[0].content.parts[0].text;
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const botReply = data.candidates[0].content.parts[0].text;
     console.log('Respuesta de Gemini:', botReply);
     res.json({ reply: botReply });
     
   } catch (error) {
     console.error('Error completo:', error);
-    console.error('Error response:', error.response?.data);
     console.error('Error message:', error.message);
     
     // Respuesta de fallback si Gemini falla
