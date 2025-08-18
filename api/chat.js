@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -29,6 +29,8 @@ export default async function handler(req, res) {
       console.error('API key no configurada');
       return res.status(500).json({ error: 'API key de Gemini no configurada' });
     }
+
+    console.log('Enviando mensaje a Gemini:', message);
 
     const response = await axios.post(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
@@ -85,9 +87,10 @@ Asistente:`
     );
 
     const botReply = response.data.candidates[0].content.parts[0].text;
+    console.log('Respuesta de Gemini:', botReply);
     res.json({ reply: botReply });
   } catch (error) {
     console.error('Error en API:', error.response?.data || error.message);
     res.status(500).json({ error: 'Error al comunicarse con Gemini' });
   }
-} 
+}; 
