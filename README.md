@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# Chatbot ISA Automation El Salvador
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un asistente virtual inteligente para ISA Automation El Salvador, construido con React y Node.js, que utiliza la API de Google Gemini para proporcionar respuestas contextuales sobre automatización industrial.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- 🤖 Chatbot inteligente con IA de Google Gemini
+- 💬 Interfaz de chat moderna y responsiva
+- 📱 Diseño adaptativo para dispositivos móviles
+- 🔍 Preguntas preestablecidas para acceso rápido
+- 📞 Información de contacto integrada
+- 🎯 Respuestas especializadas en automatización industrial
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React 19, CSS3
+- **Backend**: Node.js, Express.js
+- **IA**: Google Gemini API
+- **Despliegue**: Vercel, Netlify, Render
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación Local
 
-### `npm test`
+### Prerrequisitos
+- Node.js 18+ 
+- npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pasos
 
-### `npm run build`
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/chatbot-isa.git
+   cd chatbot-isa
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Instalar dependencias del frontend**
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Instalar dependencias del backend**
+   ```bash
+   cd backend
+   npm install
+   cd ..
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Configurar variables de entorno**
+   ```bash
+   cp backend/env.example backend/.env
+   # Edita backend/.env con tu API key de Gemini
+   ```
 
-### `npm run eject`
+5. **Ejecutar en desarrollo**
+   ```bash
+   # Terminal 1 - Backend
+   cd backend
+   npm run dev
+   
+   # Terminal 2 - Frontend
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Despliegue
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para desplegar tu chatbot en la web de forma gratuita, consulta la [guía completa de despliegue](DEPLOYMENT.md).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Opciones de Despliegue Gratuito
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Vercel** (Recomendado) - Despliegue full-stack
+- **Netlify** - Frontend estático
+- **Render** - Backend y frontend separados
 
-## Learn More
+## Uso
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Abre la aplicación en tu navegador
+2. Selecciona una pregunta preestablecida o escribe tu consulta
+3. El chatbot responderá con información especializada sobre ISA Automation
+4. Consulta información de contacto y servicios disponibles
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Estructura del Proyecto
 
-### Code Splitting
+```
+chatbot-isa/
+├── src/                    # Código fuente de React
+│   ├── components/         # Componentes de la aplicación
+│   │   └── Chatbot.js     # Componente principal del chatbot
+│   └── App.js             # Aplicación principal
+├── backend/                # Servidor Node.js
+│   ├── index.js           # Servidor Express
+│   └── package.json       # Dependencias del backend
+├── public/                 # Archivos estáticos
+├── vercel.json            # Configuración de Vercel
+└── DEPLOYMENT.md          # Guía de despliegue
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Configuración
 
-### Analyzing the Bundle Size
+### Variables de Entorno
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `GEMINI_API_KEY`: Tu clave de API de Google Gemini
+- `NODE_ENV`: Entorno de ejecución (development/production)
+- `PORT`: Puerto del servidor (por defecto: 5000)
 
-### Making a Progressive Web App
+### Personalización
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Modifica el prompt en `backend/index.js` para cambiar el comportamiento del chatbot
+- Actualiza la información de contacto en `src/components/Chatbot.js`
+- Personaliza el diseño CSS inline en el componente Chatbot
 
-### Advanced Configuration
+## Contribución
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-### Deployment
+## Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Este proyecto está bajo la Licencia ISC. Ver el archivo `LICENSE` para más detalles.
 
-### `npm run build` fails to minify
+## Contacto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ISA Automation El Salvador
+- 📍 3a Calle Poniente #5261, San Salvador
+- 📞 (503) 2243-1346
+- ✉️ info@isa.org.sv
+
+## Agradecimientos
+
+- Google Gemini API por el servicio de IA
+- React y Node.js por las tecnologías de desarrollo
+- La comunidad de desarrolladores de código abierto

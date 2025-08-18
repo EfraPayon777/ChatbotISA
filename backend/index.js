@@ -2,14 +2,31 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path');
 
-const GEMINI_API_KEY = 'AIzaSyDu7LldkmBqqxMfToNEV_jOTclxFJHZfkA';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+// Validar que la API key esté configurada
+if (!GEMINI_API_KEY) {
+  console.error('❌ Error: GEMINI_API_KEY no está configurada en las variables de entorno');
+  process.exit(1);
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// Configurar CORS para producción
+app.use(cors({
+  origin: true, // Permitir todos los orígenes temporalmente
+  credentials: true
+}));
+
 app.use(express.json());
+
+// Servir archivos estáticos en producción
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../build')));
+}
 
 // Ruta para recibir mensajes y consultar Gemini
 app.post('/api/chat', async (req, res) => {
@@ -81,6 +98,19 @@ Asistente:`
   }
 });
 
+// Ruta para verificar que el servidor esté funcionando
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Servidor funcionando correctamente' });
+});
+
+// En producción, servir la app de React
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`Servidor backend escuchando en http://localhost:${PORT}`);
+  console.log(`Modo: ${process.env.NODE_ENV || 'development'}`);
 }); 
