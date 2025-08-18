@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL || '/api';
+const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([
