@@ -74,35 +74,32 @@ const Chatbot = () => {
     setLoading(false);
     
     // En móviles, cerrar sidebar después de hacer pregunta
-    if (window.innerWidth <= 768) {
-      setShowSidebar(false);
-    }
+    setShowSidebar(false);
   };
+
+  // Detectar si es móvil
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <div style={{ 
-      maxWidth: '100%', 
-      margin: '20px auto', 
+      width: '100%', 
+      height: '100vh',
       background: '#ffffff', 
-      borderRadius: '20px', 
-      boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
       fontFamily: 'Segoe UI, Arial, sans-serif', 
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      height: 'calc(100vh - 40px)',
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      overflow: 'hidden'
     }}>
       {/* Header */}
       <div style={{ 
         background: 'linear-gradient(135deg, #005bea 0%, #007bff 100%)', 
         color: '#fff', 
-        padding: '20px', 
-        fontSize: 'clamp(1.1rem, 4vw, 1.4rem)', 
+        padding: '16px 20px', 
+        fontSize: '1.2rem', 
         fontWeight: 'bold', 
         textAlign: 'center', 
-        letterSpacing: 1,
-        position: 'relative'
+        position: 'relative',
+        flexShrink: 0
       }}>
         ISA Automation El Salvador
         
@@ -117,12 +114,10 @@ const Chatbot = () => {
             background: 'rgba(255,255,255,0.2)',
             border: 'none',
             borderRadius: '8px',
-            padding: '8px',
+            padding: '8px 12px',
             cursor: 'pointer',
-            display: 'none',
-            '@media (max-width: 768px)': {
-              display: 'block'
-            }
+            fontSize: '16px',
+            color: '#fff'
           }}
         >
           ☰
@@ -133,30 +128,28 @@ const Chatbot = () => {
       <div style={{ 
         display: 'flex', 
         flex: 1,
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
       }}>
         {/* Panel izquierdo - Preguntas preestablecidas */}
         <div style={{ 
-          width: '300px', 
+          width: isMobile ? '280px' : '300px', 
           background: '#f8fafc', 
           borderRight: '1px solid #e5e7eb',
           padding: '20px',
           overflowY: 'auto',
-          '@media (max-width: 768px)': {
-            position: 'absolute',
-            left: showSidebar ? '0' : '-100%',
-            top: 0,
-            bottom: 0,
-            zIndex: 1000,
-            width: '280px',
-            transition: 'left 0.3s ease',
-            boxShadow: showSidebar ? '2px 0 10px rgba(0,0,0,0.1)' : 'none'
-          }
+          position: isMobile ? 'absolute' : 'relative',
+          left: isMobile ? (showSidebar ? '0' : '-100%') : '0',
+          top: 0,
+          bottom: 0,
+          zIndex: 1000,
+          transition: 'left 0.3s ease',
+          boxShadow: isMobile && showSidebar ? '2px 0 10px rgba(0,0,0,0.1)' : 'none'
         }}>
           <h3 style={{ 
             margin: '0 0 20px 0', 
             color: '#374151', 
-            fontSize: 'clamp(1rem, 3vw, 1.1rem)' 
+            fontSize: '1.1rem' 
           }}>
             Preguntas frecuentes
           </h3>
@@ -174,7 +167,7 @@ const Chatbot = () => {
                 borderRadius: '12px',
                 cursor: 'pointer',
                 textAlign: 'left',
-                fontSize: 'clamp(0.8rem, 2.5vw, 0.9rem)',
+                fontSize: '0.9rem',
                 color: '#374151',
                 transition: 'all 0.2s',
                 display: 'flex',
@@ -200,10 +193,10 @@ const Chatbot = () => {
             <h4 style={{ 
               margin: '0 0 12px 0', 
               color: '#374151',
-              fontSize: 'clamp(0.9rem, 2.5vw, 1rem)'
+              fontSize: '1rem'
             }}>📞 Contacto</h4>
             <div style={{ 
-              fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', 
+              fontSize: '0.85rem', 
               color: '#6b7280', 
               lineHeight: 1.5 
             }}>
@@ -219,13 +212,13 @@ const Chatbot = () => {
           flex: 1, 
           display: 'flex', 
           flexDirection: 'column',
-          minWidth: 0 // Para que flex funcione correctamente
+          minWidth: 0,
+          background: '#fff'
         }}>
           {/* Área de mensajes */}
           <div style={{ 
             flex: 1, 
             padding: '20px', 
-            background: '#fff',
             overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
@@ -241,7 +234,7 @@ const Chatbot = () => {
                   maxWidth: '85%',
                   padding: '12px 16px',
                   borderRadius: '18px',
-                  fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)',
+                  fontSize: '0.95rem',
                   lineHeight: 1.4,
                   wordBreak: 'break-word',
                   background: msg.from === 'user' ? '#005bea' : '#f3f4f6',
@@ -265,7 +258,7 @@ const Chatbot = () => {
                   borderRadius: '18px',
                   background: '#f3f4f6',
                   color: '#6b7280',
-                  fontSize: 'clamp(0.8rem, 2.5vw, 0.9rem)',
+                  fontSize: '0.9rem',
                   fontStyle: 'italic'
                 }}>
                   Escribiendo...
@@ -278,7 +271,8 @@ const Chatbot = () => {
           <div style={{ 
             borderTop: '1px solid #e5e7eb', 
             background: '#fff', 
-            padding: '20px'
+            padding: '20px',
+            flexShrink: 0
           }}>
             <form onSubmit={handleSend} style={{ display: 'flex', gap: '12px' }}>
               <input
@@ -291,7 +285,7 @@ const Chatbot = () => {
                   padding: '12px 16px',
                   border: '1px solid #d1d5db',
                   borderRadius: '12px',
-                  fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)',
+                  fontSize: '0.95rem',
                   outline: 'none',
                   transition: 'border-color 0.2s'
                 }}
@@ -307,7 +301,7 @@ const Chatbot = () => {
                   border: 'none',
                   borderRadius: '12px',
                   padding: '12px 24px',
-                  fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)',
+                  fontSize: '0.95rem',
                   fontWeight: '600',
                   cursor: 'pointer',
                   transition: 'transform 0.2s',
@@ -324,7 +318,7 @@ const Chatbot = () => {
       </div>
 
       {/* Overlay para móviles cuando sidebar está abierto */}
-      {showSidebar && (
+      {isMobile && showSidebar && (
         <div
           onClick={() => setShowSidebar(false)}
           style={{
@@ -334,10 +328,7 @@ const Chatbot = () => {
             right: 0,
             bottom: 0,
             background: 'rgba(0,0,0,0.5)',
-            zIndex: 999,
-            '@media (min-width: 769px)': {
-              display: 'none'
-            }
+            zIndex: 999
           }}
         />
       )}
