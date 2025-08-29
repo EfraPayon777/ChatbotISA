@@ -5,7 +5,7 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://chatbot-isa-kqh
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([
-    { from: 'bot', text: '¡Hola! Soy el asistente virtual de ISA Automation El Salvador. ¿En qué puedo ayudarte hoy?' }
+    { from: 'bot', text: '¡Hola! Soy el asistente virtual de EinsteinISA. ¿En qué puedo ayudarte hoy?' }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const Chatbot = () => {
 
   // Preguntas preestablecidas
   const presetQuestions = [
-    { text: '¿Qué es ISA?', icon: '🏢' },
+    { text: '¿Qué es EinsteinISA?', icon: '🏢' },
     { text: '¿Cuál es nuestra Misión y Visión?', icon: '🎯' },
     { text: '¿Cómo contactarnos?', icon: '📞' },
     { text: '¿Qué servicios ofrecen?', icon: '⚙️' },
@@ -101,7 +101,7 @@ const Chatbot = () => {
         position: 'relative',
         flexShrink: 0
       }}>
-        ISA Automation El Salvador
+        EinsteinISA
         
         {/* Botón de menú para móviles */}
         <button
