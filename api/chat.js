@@ -299,30 +299,39 @@ FORMATO DE RESPUESTA OBLIGATORIO MEJORADO:
 - Usa formato de lista numerada para programas
 - Destaca títulos de programas con negritas y mayúsculas
 - Agrega espacios antes y después de información de contacto
+- NUNCA uses etiquetas HTML como <br>, <p>, etc.
+- Usa saltos de línea reales (líneas en blanco) para separar contenido
+- Separa cada programa específico con al menos 2 líneas en blanco
 
 EJEMPLO DE FORMATO CORRECTO MEJORADO:
-"Como miembro de EinsteinISA, obtendrás los siguientes beneficios:
+"EinsteinISA ofrece una variedad de programas de formación en automatización industrial diseñados para mejorar tus habilidades y conocimientos. Estos programas se enfocan en diferentes áreas clave de la automatización, cubriendo tanto la teoría como la práctica.
+
+A continuación, te detallamos nuestros 6 programas específicos de formación:
 
 
-• **Acceso a recursos técnicos exclusivos:**
-  - Biblioteca técnica digital actualizada
-  - Estándares internacionales ISA
-  - Mejores prácticas del sector
+1. **PROGRAMA 1: GESTIÓN Y USO DE PLC PARA APLICACIONES INDUSTRIALES** ⚙️
+• Fundamentos de procesos automatizados con PLC
+• Uso de TIA Portal: configuración básica, escritura de programas, lógica en lenguaje escalera
+• Desarrollo de lógica: condicionales, temporizadores, contadores, autoenclavamiento
+• Funciones avanzadas: transferencia de datos, funciones aritméticas, comparaciones, bloques FC y FB
+• Programación estructurada con GRAFCET
+• Integración HMI en TIA Portal: usuarios, accesos, múltiples funciones
+• Aplicaciones industriales: redes de comunicación entre PLC, integración de dispositivos vía Ethernet
 
 
-• **Descuentos en eventos y capacitaciones:**
-  - Conferencias y talleres
-  - Programas de certificación
-  - Cursos especializados
+2. **PROGRAMA 2: CERTIFICACIÓN EN ANÁLISIS DE CAUSA RAÍZ (ACR)** 🔎
+• Introducción al RCA y su importancia en mantenimiento y operaciones
+• Conformación de equipos de trabajo
+• Definición de problemas, modos de falla, evidencias físicas e hipótesis
+• Jerarquización de problemas con métodos de riesgo
+• Identificación de causas raíces (físicas, humanas, organizacionales)
+• Diseño de soluciones y análisis costo–beneficio
+• Implantación, evaluación y consolidación de procedimientos estándar
+• Desarrollo de casos prácticos en equipos de trabajo
+• Examen final de certificación
 
 
-• **Networking con profesionales del sector:**
-  - Conexión con expertos en automatización
-  - Oportunidades de colaboración
-  - Desarrollo profesional
-
-
-Para más información, contáctanos:
+Para más información sobre nuestros programas y cómo inscribirte, contáctanos:
 
 📧 **info@isa.org.sv**
 📞 **(503) 2243-1346**
