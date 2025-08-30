@@ -278,7 +278,6 @@ INSTRUCCIONES ESPECÍFICAS DE FORMATO:
 - Si te preguntan sobre el curso de sensorica, proporciona todos los detalles incluidos
 - Si te preguntan sobre áreas de formación, detalla las 8 áreas principales
 - Si te preguntan sobre programas específicos, detalla los 6 programas de formación
-- Siempre ofrece información de contacto al final de respuestas largas
 
 FORMATO DE RESPUESTA OBLIGATORIO MEJORADO:
 - Usa párrafos cortos y separados por líneas en blanco
@@ -302,6 +301,7 @@ FORMATO DE RESPUESTA OBLIGATORIO MEJORADO:
 - NUNCA uses etiquetas HTML como <br>, <p>, etc.
 - Usa saltos de línea reales (líneas en blanco) para separar contenido
 - Separa cada programa específico con al menos 2 líneas en blanco
+- No te extiendas demasiado en tus respuestas, que los parrafos sean cortos y claros.
 
 EJEMPLO DE FORMATO CORRECTO MEJORADO:
 "EinsteinISA ofrece una variedad de programas de formación en automatización industrial diseñados para mejorar tus habilidades y conocimientos. Estos programas se enfocan en diferentes áreas clave de la automatización, cubriendo tanto la teoría como la práctica.
@@ -346,7 +346,7 @@ Asistente:`
           ],
           generationConfig: {
             temperature: 0.7,        // Controla la creatividad (0-1)
-            maxOutputTokens: 300,   // Aumentado para respuestas más largas y detalladas
+            maxOutputTokens: 1000,   // Aumentado para respuestas más largas y detalladas
             topP: 0.8,              // Controla la diversidad de respuestas
             topK: 40                 // Controla la selección de tokens
           }
