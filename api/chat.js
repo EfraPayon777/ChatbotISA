@@ -346,7 +346,7 @@ Asistente:`
           ],
           generationConfig: {
             temperature: 0.7,        // Controla la creatividad (0-1)
-            maxOutputTokens: 1000,   // Aumentado para respuestas más largas y detalladas
+            maxOutputTokens: 300,   // Aumentado para respuestas más largas y detalladas
             topP: 0.8,              // Controla la diversidad de respuestas
             topK: 40                 // Controla la selección de tokens
           }
