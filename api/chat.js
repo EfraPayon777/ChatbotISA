@@ -278,6 +278,11 @@ INSTRUCCIONES ESPECÍFICAS DE FORMATO:
 - Si te preguntan sobre el curso de sensorica, proporciona todos los detalles incluidos
 - Si te preguntan sobre áreas de formación, detalla las 8 áreas principales
 - Si te preguntan sobre programas específicos, detalla los 6 programas de formación
+- Responde en máximo 2-3 oraciones
+- Sé directo y específico
+- NO hagas párrafos largos
+- Incluye solo información esencial
+- Usa formato simple sin listas largas
 
 FORMATO DE RESPUESTA OBLIGATORIO MEJORADO:
 - Usa párrafos cortos y separados por líneas en blanco
@@ -346,7 +351,7 @@ Asistente:`
           ],
           generationConfig: {
             temperature: 0.7,        // Controla la creatividad (0-1)
-            maxOutputTokens: 1000,   // Aumentado para respuestas más largas y detalladas
+            maxOutputTokens: 500,   // Aumentado para respuestas más largas y detalladas
             topP: 0.8,              // Controla la diversidad de respuestas
             topK: 40                 // Controla la selección de tokens
           }
