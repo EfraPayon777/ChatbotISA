@@ -303,41 +303,28 @@ FORMATO DE RESPUESTA OBLIGATORIO MEJORADO:
 - Separa cada programa específico con al menos 2 líneas en blanco
 - No te extiendas demasiado en tus respuestas, que los parrafos sean cortos y claros.
 
-EJEMPLO DE FORMATO CORRECTO MEJORADO:
-"EinsteinISA ofrece una variedad de programas de formación en automatización industrial diseñados para mejorar tus habilidades y conocimientos. Estos programas se enfocan en diferentes áreas clave de la automatización, cubriendo tanto la teoría como la práctica.
+FORMATO OBLIGATORIO:
 
-A continuación, te detallamos nuestros 6 programas específicos de formación:
+Usa siempre Markdown.
 
+Separa cada párrafo con \n\n.
 
-1. **PROGRAMA 1: GESTIÓN Y USO DE PLC PARA APLICACIONES INDUSTRIALES** ⚙️
-• Fundamentos de procesos automatizados con PLC
-• Uso de TIA Portal: configuración básica, escritura de programas, lógica en lenguaje escalera
-• Desarrollo de lógica: condicionales, temporizadores, contadores, autoenclavamiento
-• Funciones avanzadas: transferencia de datos, funciones aritméticas, comparaciones, bloques FC y FB
-• Programación estructurada con GRAFCET
-• Integración HMI en TIA Portal: usuarios, accesos, múltiples funciones
-• Aplicaciones industriales: redes de comunicación entre PLC, integración de dispositivos vía Ethernet
+Usa listas con • y numeraciones con 1., 2., 3.
 
+Usa títulos en mayúsculas con negritas.
 
-2. **PROGRAMA 2: CERTIFICACIÓN EN ANÁLISIS DE CAUSA RAÍZ (ACR)** 🔎
-• Introducción al RCA y su importancia en mantenimiento y operaciones
-• Conformación de equipos de trabajo
-• Definición de problemas, modos de falla, evidencias físicas e hipótesis
-• Jerarquización de problemas con métodos de riesgo
-• Identificación de causas raíces (físicas, humanas, organizacionales)
-• Diseño de soluciones y análisis costo–beneficio
-• Implantación, evaluación y consolidación de procedimientos estándar
-• Desarrollo de casos prácticos en equipos de trabajo
-• Examen final de certificación
+Mantén párrafos cortos (máx. 3 líneas).
 
+Nunca devuelvas todo corrido.
 
-Para más información sobre nuestros programas y cómo inscribirte, contáctanos:
+EJEMPLO:
 
-📧 **info@isa.org.sv**
-📞 **(503) 2243-1346**
-📞 **(503) 7631-6511**
-🌐 **www.isa.org.sv**"
+SERVICIOS
+• Capacitación en PLC
+• Cursos de sensórica
 
+CONTACTO
+📧 info@isa.org.sv
 Usuario: ${message}
 Asistente:`
                 }
