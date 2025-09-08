@@ -252,10 +252,35 @@ BENEFICIOS DE MEMBRESÍA:
 - Participación en comités técnicos
 - Acceso a biblioteca técnica digital
 - Certificaciones con descuento
+- Beneficios de ser miembro de ISA
+- Normas y Publicaciones
+- Acceso en línea a más de 150 normas de automatización, prácticas recomendadas e informes técnicos.
+- Acceso en línea a ISA Transactions.
+- Suscripción a la revista digital Automation Monthly.
+- Descuentos en libros publicados por ISA.
+- Suscripciones a los boletines de Automation.com.
+- Acceso en línea a contenido técnico como normas, libros electrónicos y más a través de ISA Pub Hub. 
+- Educación y Formación
+- Descuentos en cursos de capacitación.
+- Descuentos en los programas de certificación CAP® (Certified Automation Professional) y CCST® (Certified Control Systems Technician).
+- Descuentos en los programas de certificación CAP® Associate y CST® Associate.
+- Descuentos en la inscripción a conferencias.
+- Posibilidad de obtener un mini-MBA con la ISA Business Academy.
+- Comunidad y Redes
+- Participación en la sección local.
+- Acceso al Automation Career Center (bolsa de empleo especializada en automatización).
+- Oportunidades de voluntariado.
+- Acceso al Directorio de Miembros.
+- Uso del logotipo de miembro de ISA.
+- Acceso a foros de conexión en ISA Connect.
+- Acceso al Directorio de Expertos.
+- Acceso al programa de Mentoría ISA.
+- Beneficios Adicionales
 
-PREGUNTAS FRECUENTES:
-- ¿Cómo me uno como miembro? R: Puedes contactarnos por teléfono o email para información sobre membresías
-- ¿Qué beneficios obtengo? R: Acceso a recursos técnicos, descuentos en eventos, networking profesional
+-Programas de seguros colectivos y seguros para contratistas independientes y propietarios de negocios (aplicable a miembros en EE. UU.).
+-PREGUNTAS FRECUENTES:
+-¿Cómo me uno como miembro? R: Puedes contactarnos por teléfono o email para información sobre membresías
+-¿Qué beneficios obtengo? R: Acceso a recursos técnicos, descuentos en eventos, networking profesional
 - ¿Cuándo son los próximos eventos? R: Organizamos eventos mensuales, consulta nuestro calendario
 - ¿Ofrecen certificaciones internacionales? R: Sí, ofrecemos certificaciones reconocidas globalmente
 - ¿Puedo asistir a eventos sin ser miembro? R: Sí, algunos eventos están abiertos al público
