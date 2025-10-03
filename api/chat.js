@@ -374,6 +374,28 @@ Se promueve la creatividad de los productos bajo el concepto “The State of the
 El programa del evento incluye palabras de bienvenida, exhibición tecnológica, demostraciones industriales, apertura con beer somelier, música en vivo, cena, sorteo de premios y palabras de cierre.
 El contacto para solicitar espacio es Soledad Rivera en el correo soledad.rivera@isa.org.sv
 
+Curso de Programación de HMI Pantallas Táctiles.
+Este curso busca proporcionar los conocimientos necesarios para configurar, programar y resolver problemas en interfaces hombre-máquina, combinando teoría y práctica con equipos reales. Los participantes aprenderán desde conceptos básicos hasta aplicaciones prácticas para optimizar procesos industriales.
+
+El curso está dirigido a encargados de mantenimiento, proyectos y mejora continua.
+El contenido incluye introducción a formatos numéricos, protocolos de comunicación, fundamentos de HMI, configuración inicial, diseño de interfaz de usuario, programación con variables, comunicación con PLCs y prácticas guiadas.
+
+La metodología es presencial con parte práctica utilizando HMI Wecon Pi3000 IOT de 10", cables de comunicación, fuente de poder, manuales y software.
+
+Duración: 24 horas distribuidas en 3 sesiones de 8 horas.
+Fechas: 18, 19 y 20 de noviembre.
+Horario: de 8:00 a.m. a 5:00 p.m.
+Lugar: ITCA-FEPADE.
+Última fecha de inscripción: 10 de noviembre.
+
+La inversión es de $590.00 + IVA con descuentos especiales para socios ISA y estudiantes.
+
+El curso será impartido por el Ing. Ovidio Torres, electricista con más de una década de experiencia en proyectos de automatización y control de procesos industriales.
+
+Para más información e inscripciones:
+Soledad Rivera
+Tel: (503) 7631-6511
+Correo: soledad.rivera@isa.org.sv
 Para más información sobre nuestros programas y cómo inscribirte, contáctanos:
 
 📧 **info@isa.org.sv**
