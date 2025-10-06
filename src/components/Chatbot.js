@@ -43,7 +43,10 @@ const Chatbot = () => {
       console.log('Enviando petición a:', url);
       console.log('Mensaje:', userMsg);
       
-      const res = await axios.post(url, { message: userMsg });
+      const res = await axios.post(url, { 
+        message: userMsg,
+        conversationHistory: messages.slice(-6) // Enviar últimos 6 mensajes para contexto
+      });
       console.log('Respuesta exitosa:', res.data);
       setMessages(prev => [...prev, { from: 'bot', text: res.data.reply }]);
     } catch (err) {
@@ -63,7 +66,10 @@ const Chatbot = () => {
       console.log('Enviando pregunta preestablecida a:', url);
       console.log('Pregunta:', question);
       
-      const res = await axios.post(url, { message: question });
+      const res = await axios.post(url, { 
+        message: question,
+        conversationHistory: messages.slice(-6) // Enviar últimos 6 mensajes para contexto
+      });
       console.log('Respuesta exitosa:', res.data);
       setMessages(prev => [...prev, { from: 'bot', text: res.data.reply }]);
     } catch (err) {

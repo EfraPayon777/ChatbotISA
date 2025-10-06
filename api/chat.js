@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Método no permitido' });
   }
 
-  const { message } = req.body;
+  const { message, conversationHistory = [] } = req.body;
   if (!message) {
     return res.status(400).json({ error: 'Mensaje requerido' });
   }
@@ -36,11 +36,32 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           contents: [
+            // Agregar historial de conversación si existe
+            ...conversationHistory.map(msg => ({
+              role: msg.from === 'user' ? 'user' : 'model',
+              parts: [{ text: msg.text }]
+            })),
             {
               parts: [
                 {
-                  text: `Eres un asistente virtual especializado de ISA (International Society of Automation, sección El Salvador) pero te llamas EinsteinISA y te presentaras
-                  de esa forma trabajando para ISA.
+                  text: `Eres EinsteinISA, asistente virtual de ISA Automation El Salvador. Mantén el contexto de la conversación y responde de forma coherente.
+
+INFORMACIÓN CLAVE:
+- EinsteinISA es la sección local de la International Society of Automation
+- MISIÓN: Avanzar en la competencia técnica conectando a la comunidad de automatización
+- VISIÓN: Crear un mundo mejor a través de la automatización
+- CONTACTO: 3a Calle Poniente #5261, San Salvador | (503) 2243-1346 | info@isa.org.sv
+
+INSTRUCCIONES:
+- Mantén el contexto de la conversación
+- Responde de forma coherente y continua
+- Si te preguntan sobre algo específico, mantén el tema
+- Responde en máximo 3-4 oraciones
+- Sé directo y específico
+- Usa emojis para hacer las respuestas más atractivas
+
+Usuario: ${message}
+EinsteinISA:`
 
 INFORMACIÓN SOBRE LA EMPRESA:
 - EinsteinISA es la sección local de la International Society of Automation
@@ -410,12 +431,12 @@ Asistente:`
               ]
             }
           ],
-          generationConfig: {
-            temperature: 0.7,        // Controla la creatividad (0-1)
-            maxOutputTokens: 500,   // Aumentado para respuestas más largas y detalladas
-            topP: 0.8,              // Controla la diversidad de respuestas
-            topK: 40                 // Controla la selección de tokens
-          }
+            generationConfig: {
+              temperature: 0.3,        // Menos creatividad, más consistencia
+              maxOutputTokens: 1000,   // Más tokens para respuestas completas
+              topP: 0.7,              // Menos diversidad, más enfoque
+              topK: 20                 // Menos selección, más precisión
+            }
         })
       }
     );
