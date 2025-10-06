@@ -411,10 +411,10 @@ Asistente:`
             }
           ],
           generationConfig: {
-            temperature: 0.3,        // Menos creatividad, más consistencia
-            maxOutputTokens: 800,     // Más tokens para evitar texto cortado
-            topP: 0.7,               // Menos diversidad, más enfoque
-            topK: 20                  // Menos selección, más precisión
+            temperature: 0.2,        // Menos creatividad, más consistencia
+            maxOutputTokens: 300,     // Menos tokens para respuestas más cortas
+            topP: 0.6,               // Menos diversidad, más enfoque
+            topK: 15                  // Menos selección, más precisión
           }
         })
       }
