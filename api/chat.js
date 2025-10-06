@@ -31,17 +31,18 @@ export default async function handler(req, res) {
   try {
     console.log('Mensaje recibido:', message);
     
-    // API key de Gemini - VERIFICA QUE ESTÉ ACTIVA
-    const GEMINI_API_KEY = 'AIzaSyCPwgmho1lHYCw43aIjEWh2JS4kqJ-ypww';
+    // API key de Gemini - NUEVA CLAVE QUE FUNCIONA
+    const GEMINI_API_KEY = 'AIzaSyDaLBDN76CHOgAf0Mc9DMUxuR1bY-2GiyI';
     
     console.log('Enviando a Gemini...');
     
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-goog-api-key': GEMINI_API_KEY
         },
         body: JSON.stringify({
           contents: [
@@ -85,7 +86,7 @@ Asistente:`
     );
 
     console.log('Status de respuesta:', response.status);
-    
+
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Error de Gemini:', errorText);
