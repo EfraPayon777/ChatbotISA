@@ -360,44 +360,6 @@ A continuación, te detallamos nuestros 6 programas específicos de formación:
 • Desarrollo de casos prácticos en equipos de trabajo
 • Examen final de certificación
 
-Automation Night es un evento organizado por ISA El Salvador.
-Su objetivo principal es impulsar y divulgar los avances tecnológicos en instrumentación, sistemas, automatización y mantenimiento industrial.
-También busca generar un espacio de convivencia entre miembros de la asociación, proveedores e integradores en un ambiente cordial e innovador.
-El evento está dirigido a socios profesionales, directivos estudiantiles y socios potenciales de ISA.
-Se desarrolla en un área de exhibición donde se presentan las últimas tendencias y soluciones tecnológicas.
-Los stands VIP 3x3 incluyen mesa plegable, dos sillas y acceso para dos personas con cena.
-Además ofrecen diez invitaciones para clientes VIP, presencia de marca en redes sociales y en todos los diseños del evento.
-Incluyen acceso a la base de datos de participantes, la posibilidad de llevar promocionales y la obligación de aportar dos premios para la rifa.
-El costo de cada stand es de 600 dólares más IVA.
-Los requisitos de los stands son enfocarse en tecnología 4.0, mostrar nuevas tendencias en automatización, ofrecer demostraciones interactivas y presentar innovaciones.
-Se promueve la creatividad de los productos bajo el concepto “The State of the Art”.
-El programa del evento incluye palabras de bienvenida, exhibición tecnológica, demostraciones industriales, apertura con beer somelier, música en vivo, cena, sorteo de premios y palabras de cierre.
-El contacto para solicitar espacio es Soledad Rivera en el correo soledad.rivera@isa.org.sv
-
-Curso de Programación de HMI Pantallas Táctiles.
-Este curso busca proporcionar los conocimientos necesarios para configurar, programar y resolver problemas en interfaces hombre-máquina, combinando teoría y práctica con equipos reales. Los participantes aprenderán desde conceptos básicos hasta aplicaciones prácticas para optimizar procesos industriales.
-
-El curso está dirigido a encargados de mantenimiento, proyectos y mejora continua.
-El contenido incluye introducción a formatos numéricos, protocolos de comunicación, fundamentos de HMI, configuración inicial, diseño de interfaz de usuario, programación con variables, comunicación con PLCs y prácticas guiadas.
-
-La metodología es presencial con parte práctica utilizando HMI Wecon Pi3000 IOT de 10", cables de comunicación, fuente de poder, manuales y software.
-
-Duración: 24 horas distribuidas en 3 sesiones de 8 horas.
-Fechas: 18, 19 y 20 de noviembre.
-Horario: de 8:00 a.m. a 5:00 p.m.
-Lugar: ITCA-FEPADE.
-Última fecha de inscripción: 10 de noviembre.
-
-La inversión es de $590.00 + IVA con descuentos especiales para socios ISA y estudiantes.
-
-El curso será impartido por el Ing. Ovidio Torres, electricista con más de una década de experiencia en proyectos de automatización y control de procesos industriales.
-
-Para más información e inscripciones:
-Soledad Rivera
-Tel: (503) 7631-6511
-Correo: soledad.rivera@isa.org.sv
-Para más información sobre nuestros programas y cómo inscribirte, contáctanos:
-
 📧 **info@isa.org.sv**
 📞 **(503) 2243-1346**
 📞 **(503) 7631-6511**
