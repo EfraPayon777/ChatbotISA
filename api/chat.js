@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 
   try {
     // API key de Gemini hardcodeada
-    const GEMINI_API_KEY = 'AIzaSyDu7LldkmBqqxMfToNEV_jOTclxFJHZfkA';
+    const GEMINI_API_KEY = 'AIzaSyCPwgmho1lHYCw43aIjEWh2JS4kqJ-ypww';
     
     console.log('Enviando mensaje a Gemini:', message);
 
