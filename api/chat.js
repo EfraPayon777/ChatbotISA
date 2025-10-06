@@ -31,8 +31,10 @@ export default async function handler(req, res) {
   try {
     console.log('Mensaje recibido:', message);
     
-    // API key de Gemini
+    // API key de Gemini - VERIFICA QUE ESTÉ ACTIVA
     const GEMINI_API_KEY = 'AIzaSyCPwgmho1lHYCw43aIjEWh2JS4kqJ-ypww';
+    
+    console.log('Enviando a Gemini...');
     
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
@@ -82,13 +84,19 @@ Asistente:`
       }
     );
 
+    console.log('Status de respuesta:', response.status);
+    
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorText = await response.text();
+      console.error('Error de Gemini:', errorText);
+      throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();
+    console.log('Respuesta de Gemini:', data);
+    
     const botReply = data.candidates[0].content.parts[0].text;
-    console.log('Respuesta de Gemini:', botReply);
+    console.log('Respuesta final:', botReply);
     res.json({ reply: botReply });
     
   } catch (error) {
@@ -98,4 +106,4 @@ Asistente:`
       details: error.message
     });
   }
-}
+} 
