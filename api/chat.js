@@ -31,19 +31,64 @@ export default async function handler(req, res) {
   try {
     console.log('Mensaje recibido:', message);
     
-    // Respuesta simple sin IA por ahora
-    const botReply = `Hola! Soy EinsteinISA, el asistente virtual de ISA Automation El Salvador. 
+    // API key de Gemini
+    const GEMINI_API_KEY = 'AIzaSyCPwgmho1lHYCw43aIjEWh2JS4kqJ-ypww';
     
-    Somos la sección local de la International Society of Automation en El Salvador.
-    
-    Nuestra misión es avanzar en la competencia técnica conectando a la comunidad de automatización.
-    
-    Para más información, contáctanos:
-    📧 info@isa.org.sv
-    📞 (503) 2243-1346
-    📍 3a Calle Poniente #5261, San Salvador`;
-    
-    console.log('Respuesta enviada:', botReply);
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  text: `Eres EinsteinISA, asistente virtual de ISA Automation El Salvador.
+
+INFORMACIÓN CLAVE:
+- EinsteinISA es la sección local de International Society of Automation
+- Misión: Avanzar en la competencia técnica conectando a la comunidad de automatización
+- Visión: Crear un mundo mejor a través de la automatización
+- Contacto: 3a Calle Poniente #5261, San Salvador | (503) 2243-1346 | info@isa.org.sv
+
+SERVICIOS:
+- 6 programas específicos de formación
+- 8 áreas principales en automatización
+- Capacitaciones en PLC, HMI, Sensórica, Variadores, Servosistemas
+- Certificaciones internacionales
+
+INSTRUCCIONES:
+- Responde en máximo 2-3 oraciones
+- Sé directo y específico
+- Mantén un tono profesional pero amigable
+- Incluye información de contacto cuando sea apropiado
+
+Usuario: ${message}
+Asistente:`
+                }
+              ]
+            }
+          ],
+          generationConfig: {
+            temperature: 0.2,
+            maxOutputTokens: 200,
+            topP: 0.7,
+            topK: 30
+          }
+        })
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const botReply = data.candidates[0].content.parts[0].text;
+    console.log('Respuesta de Gemini:', botReply);
     res.json({ reply: botReply });
     
   } catch (error) {
